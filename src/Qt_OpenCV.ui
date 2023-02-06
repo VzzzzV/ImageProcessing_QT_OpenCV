@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Qt_OpenCVClass</class>
+ <widget class="QMainWindow" name="Qt_OpenCVClass">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1397</width>
+    <height>816</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Qt_OpenCV</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>1</horstretch>
+     <verstretch>1</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>1</pointsize>
+    </font>
+   </property>
+   <property name="toolTipDuration">
+    <number>0</number>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QScrollArea" name="scrollArea">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>1</horstretch>
+        <verstretch>1</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>1395</width>
+         <height>791</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="toolTipDuration">
+        <number>0</number>
+       </property>
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>1141</width>
+          <height>761</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>1</horstretch>
+          <verstretch>1</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="lineWidth">
+         <number>0</number>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1397</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_file">
+    <property name="cursor">
+     <cursorShape>ArrowCursor</cursorShape>
+    </property>
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="open"/>
+    <addaction name="save"/>
+   </widget>
+   <widget class="QMenu" name="menu_bin">
+    <property name="title">
+     <string>二值化</string>
+    </property>
+    <addaction name="otsu"/>
+    <addaction name="threshold"/>
+   </widget>
+   <widget class="QMenu" name="menu_trans">
+    <property name="title">
+     <string>几何变换</string>
+    </property>
+    <addaction name="move"/>
+    <addaction name="zoom"/>
+    <addaction name="rotate"/>
+   </widget>
+   <widget class="QMenu" name="menul_fiter">
+    <property name="title">
+     <string>滤波</string>
+    </property>
+    <addaction name="actionl_min3X3"/>
+    <addaction name="action_min5X5"/>
+    <addaction name="action_mid3X3"/>
+    <addaction name="action_mid5X5"/>
+    <addaction name="action_gauss3X3"/>
+    <addaction name="action_gauss5X5"/>
+    <addaction name="actionNAFSM"/>
+   </widget>
+   <widget class="QMenu" name="menu_noise">
+    <property name="title">
+     <string>噪声</string>
+    </property>
+    <addaction name="actionl_noise_salt_papper"/>
+    <addaction name="actionl_noise"/>
+    <addaction name="actionl_noise_guauss"/>
+   </widget>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>增强</string>
+    </property>
+    <addaction name="actionl_5"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>信噪比</string>
+    </property>
+    <addaction name="actionSNR"/>
+    <addaction name="actionPSNR"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>边缘检测</string>
+    </property>
+    <addaction name="actionPrewitt_V"/>
+    <addaction name="actionSoblel_L"/>
+    <addaction name="actionRoberts_LU_RB"/>
+    <addaction name="actionLOG"/>
+    <addaction name="actionLOG_8"/>
+    <addaction name="actionCanny"/>
+   </widget>
+   <addaction name="menu_file"/>
+   <addaction name="menu_bin"/>
+   <addaction name="menu_trans"/>
+   <addaction name="menul_fiter"/>
+   <addaction name="menu_3"/>
+   <addaction name="menu_noise"/>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+  </widget>
+  <action name="open">
+   <property name="text">
+    <string>打开</string>
+   </property>
+  </action>
+  <action name="save">
+   <property name="text">
+    <string>保存</string>
+   </property>
+  </action>
+  <action name="ostu">
+   <property name="text">
+    <string>d</string>
+   </property>
+  </action>
+  <action name="actione">
+   <property name="text">
+    <string>e</string>
+   </property>
+  </action>
+  <action name="otsu">
+   <property name="text">
+    <string>大津算法</string>
+   </property>
+  </action>
+  <action name="threshold">
+   <property name="text">
+    <string>门阈值</string>
+   </property>
+  </action>
+  <action name="move">
+   <property name="text">
+    <string>平移</string>
+   </property>
+  </action>
+  <action name="zoom">
+   <property name="text">
+    <string>缩放</string>
+   </property>
+  </action>
+  <action name="rotate">
+   <property name="text">
+    <string>旋转</string>
+   </property>
+  </action>
+  <action name="actionl_noise_salt_papper">
+   <property name="text">
+    <string>椒盐噪声</string>
+   </property>
+  </action>
+  <action name="actionl_noise">
+   <property name="text">
+    <string>白噪声</string>
+   </property>
+  </action>
+  <action name="actionl_noise_guauss">
+   <property name="text">
+    <string>高斯噪声</string>
+   </property>
+  </action>
+  <action name="actionl_min3X3">
+   <property name="text">
+    <string>均值滤波3X3</string>
+   </property>
+  </action>
+  <action name="action_min5X5">
+   <property name="text">
+    <string>均值滤波5X5</string>
+   </property>
+  </action>
+  <action name="action_mid3X3">
+   <property name="text">
+    <string>中值滤波3X3</string>
+   </property>
+  </action>
+  <action name="action_mid5X5">
+   <property name="text">
+    <string>中值滤波5X5</string>
+   </property>
+  </action>
+  <action name="action_gauss3X3">
+   <property name="text">
+    <string>高斯滤波3X3</string>
+   </property>
+  </action>
+  <action name="action_gauss5X5">
+   <property name="text">
+    <string>高斯滤波5X5</string>
+   </property>
+  </action>
+  <action name="actionl_5">
+   <property name="text">
+    <string>直方图均衡</string>
+   </property>
+  </action>
+  <action name="actionSNR">
+   <property name="text">
+    <string>SNR</string>
+   </property>
+  </action>
+  <action name="actionPSNR">
+   <property name="text">
+    <string>PSNR</string>
+   </property>
+  </action>
+  <action name="actionNAFSM">
+   <property name="text">
+    <string>NAFSM</string>
+   </property>
+  </action>
+  <action name="actionPrewitt_V">
+   <property name="text">
+    <string>Prewitt</string>
+   </property>
+  </action>
+  <action name="actionPrewitt_L">
+   <property name="text">
+    <string>Prewitt_L</string>
+   </property>
+  </action>
+  <action name="actionRoberts_LU_RB">
+   <property name="text">
+    <string>Robert</string>
+   </property>
+  </action>
+  <action name="actionRoberts_LB_RU">
+   <property name="text">
+    <string>Roberts_LB_RU</string>
+   </property>
+  </action>
+  <action name="actionSoblel_V">
+   <property name="text">
+    <string>Sobel_V</string>
+   </property>
+  </action>
+  <action name="actionSoblel_L">
+   <property name="text">
+    <string>Sobel</string>
+   </property>
+  </action>
+  <action name="actionLOG">
+   <property name="text">
+    <string>LOG(4)</string>
+   </property>
+  </action>
+  <action name="actionLOG_8">
+   <property name="text">
+    <string>LOG(8)</string>
+   </property>
+  </action>
+  <action name="actionCanny">
+   <property name="text">
+    <string>Canny</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="0" margin="0"/>
+ <resources>
+  <include location="Qt_OpenCV.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>menuBar</sender>
+   <signal>triggered(QAction*)</signal>
+   <receiver>Qt_OpenCVClass</receiver>
+   <slot>Menu_Action(QAction*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>9</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1210</x>
+     <y>96</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>Menu_Action(QAction*)</slot>
+ </slots>
+</ui>
